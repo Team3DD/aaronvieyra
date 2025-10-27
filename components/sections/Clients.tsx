@@ -64,19 +64,19 @@ export default function Clients() {
                   className="logo-card"
                   data-modal-src={logo.modalSrc}
                   onClick={() => {
-                    const modalImage = document.getElementById("modal-image")
+                    const modalImage = document.getElementById("modal-image") as HTMLImageElement
                     if (modalImage) {
                       modalImage.src = logo.modalSrc
                     }
                   }}
                 >
-                  <img src={logo.src || "/placeholder.svg"} alt={logo.alt} loading="lazy" />
+                  <img src={logo.src} alt={logo.alt} loading="lazy" />
                 </label>
               ))}
 
               {logos.map((logo, index) => (
                 <div key={`dup-${index}`} className="logo-card" aria-hidden="true">
-                  <img src={logo.src || "/placeholder.svg"} alt={logo.alt} loading="lazy" />
+                  <img src={logo.src} alt={logo.alt} loading="lazy" />
                 </div>
               ))}
             </div>
@@ -109,8 +109,8 @@ export default function Clients() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </label>
           <div className="modal-image-wrapper">
